@@ -2,7 +2,7 @@ import { storyblokEditable } from "@storyblok/react";
 
 const Feature = ({ blok }) => {
   return(
-    <div className="blok.feature" {... storyblokEditable(blok) }>
+    <div className="feature-blok" {... storyblokEditable(blok) }>
 {blok.name} 
  
     </div>
