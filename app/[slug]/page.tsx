@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { Metadata, NextPage } from "next";
 import fetchData from "@utils/fetch-data";
 import StoryblokStory from "@storyblok/react/story";
 import { notFound } from "next/navigation";
@@ -7,8 +7,8 @@ type Props = {
   params: { slug: string };
 };
 
-const Page: NextPage<Props> = async ({ params: { slug } }) => {
-  const { data, status } = await fetchData(slug);
+const Home: NextPage<Props> = async () => {
+  const { data, status } = await fetchData("home");
   if (status === 404) {
     return notFound();
   }
@@ -16,8 +16,9 @@ const Page: NextPage<Props> = async ({ params: { slug } }) => {
   return (
     <div>
       <StoryblokStory story={data.story} />
+      <h1>hoi</h1>
     </div>
   );
 };
 
-export default Page;
+export default Home;
